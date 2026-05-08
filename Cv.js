@@ -584,7 +584,7 @@ async function requireAccess(ctx, next) {
 // --- 1. TXT to VCF (Multiple) ---
 async function handleCvTxtToVcfStart(ctx, userId) {
     setState(userId, { mode: 'cv_txt_to_vcf', files: [], fileNames: [], collecting: true });
-    await safeReply(ctx, `📥 *Mengumpulkan file TXT...*\n\nKirim file lain atau ketik /done`);
+    await safeReply(ctx, `📥 *Mengumpulkan file TXT...*\n\nSetelah selesai mengirimkan File silahkan tekan /done untuk melanjutkan`);
 }
 
 async function handleCvTxtToVcfFile(ctx, userId, state, doc) {
@@ -638,7 +638,7 @@ async function finalizeCvTxtToVcf(ctx, userId, state) {
 // --- 2. VCF to TXT (Multiple) ---
 async function handleCvVcfToTxtStart(ctx, userId) {
     setState(userId, { mode: 'cv_vcf_to_txt', files: [], fileNames: [], collecting: true });
-    await safeReply(ctx, `📥 *Mengumpulkan file VCF...*\n\nKirim file lain atau ketik /done`);
+    await safeReply(ctx, `📥 *Mengumpulkan file VCF...*\n\nSetelah selesai mengirimkan File silahkan tekan /done untuk melanjutkan`);
 }
 
 async function handleCvVcfToTxtFile(ctx, userId, state, doc) {
@@ -788,7 +788,7 @@ async function handleTxt2VcfFile(ctx, userId, state, doc) {
 // --- 5. Gabung TXT ---
 async function handleGabungTxtStart(ctx, userId) {
     setState(userId, { mode: 'gabungtxt', files: [], fileNames: [], collecting: true });
-    await safeReply(ctx, `📥 *Mengumpulkan file TXT...*\n\nKirim file lain atau ketik /done`);
+    await safeReply(ctx, `📥 *Mengumpulkan file TXT...*\n\nSetelah selesai mengirimkan File silahkan tekan /done untuk melanjutkan`);
 }
 
 async function handleGabungTxtFile(ctx, userId, state, doc) {
@@ -855,7 +855,7 @@ async function finalizeGabungTxt(ctx, userId, state) {
 // --- 6. Gabung VCF ---
 async function handleGabungVcfStart(ctx, userId) {
     setState(userId, { mode: 'gabungvcf', files: [], fileNames: [], collecting: true });
-    await safeReply(ctx, `📥 *Mengumpulkan file VCF...*\n\nKirim file lain atau ketik /done`);
+    await safeReply(ctx, `📥 *Mengumpulkan file VCF...*\n\nSetelah selesai mengirimkan File silahkan tekan /done untuk melanjutkan`);
 }
 
 async function handleGabungVcfFile(ctx, userId, state, doc) {
